@@ -1,0 +1,30 @@
+
+{% load static %}
+{% load i18n %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Introduzca su nombre en mayúsculas</h1>
+    <form id="formulario" action="" method="post">
+        {% csrf_token %}
+        <label for="">Contraseña</label>
+        <input id="contraseña1" type="text">
+
+        <label for="">Confirmar Contraseña</label>
+        <input id="contraseña2" type="text">
+
+        <input id="boton" type="button" value="enviar">
+        <input id="mostrarContrasenias" type="button" value="Mostrar contraseñas">
+    </form>
+
+
+    <script src="{% static 'js/prueba.js' %}"></script>
+</body>
+</html>
