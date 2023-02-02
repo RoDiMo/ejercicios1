@@ -31,13 +31,21 @@ def prueba(request):
             return JsonResponse({'status': 'Todo added!'})
         return JsonResponse({'status': 'Invalid request'}, status=400)
     else:
-        return render(request, "prueba.html",)
+        return render(request, "prueba.html", )
+
+
+def dom(request):
+    is_ajax = request.headers.get('X-Requested-With') == 'XMLHttpRequest'
+    if is_ajax:
+
+        if request.method == 'GET':
+            data = [
+                {"src":"/img/img1.jpg", "desc": "descripcion1", "specs": ["spec11", "spec12"]},
+                {"src":"/img/img2.jpg", "desc": "descripcion2", "specs": ["spec21", "spec22",]},
+            ]
 
 
 
-
-
-
-def muestra_prueba(request):
-    contrasenia = Contrasenias.objects.all()
-    return render(request, "muestra_prueba.html", {"contrasenias":contrasenia})
+            return JsonResponse({'data': data})
+    else:
+        return render(request, "dom.html")

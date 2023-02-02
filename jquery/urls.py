@@ -9,6 +9,6 @@ from jquery import views
 urlpatterns = [
     path('', views.inicio, name='inicio'),
     path('prueba/', views.prueba, name='prueba'),
-    path('muestra_prueba/', views.muestra_prueba, name='muestra_prueba'),
+    path('dom/', views.dom, name='dom'),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
